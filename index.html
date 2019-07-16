@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>M:TG:TG Chaos Draft</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href=./reset.css />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="./mtgtg.jpg" class="img_center"/>
+      <h1 class="center">CHAOS DRAFT</h1>
+      <p class="center">
+        Enter the name of each booster pack (duplicates ok!), then the amount of players, then hit ASSIGN BOOSTERS to get
+        assigned your packs!
+      </p>
+      <input type="text" id="booster_title" />
+      <label for="booster_title">Enter booster name!</label>
+      <br /><br />
+      <input
+        class="btn waves-effect"
+        type="submit"
+        id="booster_enter"
+        value="Enter Booster"
+      />
+      <input type="text" id="player_count" />
+      <label for="player_count">Enter player count!</label>
+      <br /><br />
+      <input
+        class="btn waves-effect"
+        type="submit"
+        id="booster_assign"
+        value="ASSIGN BOOSTERS"
+      />
+      <br><br><br>
+      <div class="divider"></div>
+      <br>
+      <div class="booster_list"></div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
