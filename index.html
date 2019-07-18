@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>M:TG:TG Chaos Draft</title>
@@ -18,36 +18,45 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container">
-      <img src="./mtgtg.jpg" class="img_center"/>
-      <h1 class="center">CHAOS DRAFT</h1>
-      <p class="center">
-        Enter the name of each booster pack (duplicates ok!), then the amount of players, then hit ASSIGN BOOSTERS to get
-        assigned your packs!
-      </p>
-      <input type="text" id="booster_title" />
-      <label for="booster_title">Enter booster name!</label>
-      <br /><br />
-      <input
-        class="btn waves-effect"
-        type="submit"
-        id="booster_enter"
-        value="Enter Booster"
-      />
-      <input type="text" id="player_count" />
-      <label for="player_count">Enter player count!</label>
-      <br /><br />
-      <input
-        class="btn waves-effect"
-        type="submit"
-        id="booster_assign"
-        value="ASSIGN BOOSTERS"
-      />
-      <br><br><br>
-      <div class="divider"></div>
-      <br>
-      <div class="booster_list"></div>
+      <div class="container">
+          <div class="row">
+              <div class="col s12">
+                  <img src="./mtgtg.jpg" class="img_center" />
+                  <h1 class="center">CHAOS DRAFT</h1>
+                  <p class="center">
+                      Enter the name of each booster pack (duplicates ok!), then the amount of players, then hit ASSIGN BOOSTERS to get
+                      assigned your packs!
+                  </p>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col s6">This where the players go</div>
+              <div class="col s6">
+
+                  <input type="text" id="booster_title" />
+                  <label for="booster_title">Enter booster name!</label>
+                  <br /><br />
+                  <input class="btn waves-effect"
+                         type="submit"
+                         id="booster_enter"
+                         value="Enter Booster" />
+                  
+                  <input type="text" id="player_count" />
+                  <label for="player_count">Enter player count!</label>
+                  <br /><br />
+                  <input class="btn waves-effect"
+                         type="submit"
+                         id="booster_assign"
+                         value="ASSIGN BOOSTERS" />
+                  <br><br><br>
+                  <div class="divider"></div>
+                  <br>
+                  <div class="booster_list"></div>
+              </div>
+
+          </div>
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
