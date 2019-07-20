@@ -1,6 +1,8 @@
 # Magic: The Gathering Chaos Draft Pack Randomizer
+Website that takes Magic: The Gathering booster pack names and player names for random booster pack distribution during a Chaos Draft. Uses HTML, CSS, jQuery, and Javascript. TODO: Use Mongo.
 
-Website that takes Magic: The Gathering booster pack names and player count for random booster pack distribution during a Chaos Draft. Uses HTML, CSS, jQuery, and Javascript.
+# The Site
+https://nackles.github.io/mtgdrafter/
 
 # Functionality
 MTG drafter takes booster pack and player name input, counts the amount of each, and validates forms - denying empty input.
