@@ -1,30 +1,40 @@
 // declare global variables
-let boosterArr = [
-  "Khans of Tarkir",
-  "Guilds of Ravnica",
-  "Ravnica Allegiance",
-  "Iconic Masters",
-  "Core 2020",
-  "Dragon's Maze"
-];
-let playerAmt;
+let boosterArr = [];
+let playerArr = [];
 let booster;
+let player;
+let playerCount = 0;
+let packCount = 0;
 
-// on button click, populate BOTH an array with the booster pack name AND display the array on the screen
+// Add a booster
 $("#booster_enter").on("click", function() {
+  packCount += 1;
+  $("#pack_count").text(packCount);
   booster = $("#booster_title").val();
   boosterArr.push(booster);
-  console.log(booster);
+  $("#player_packs").append('<ul>'+booster+'</ul>')
+
+  $("#booster_title").val('');
 });
 
+// Add a player
+$("#player_enter").on("click", function(){
+  playerCount += 1;
+  $("#player_count").text(playerCount)
+  player = $("#player_name").val();
+  playerArr.push(player);
+  $("#player_entries").append('<ul>'+player+'</ul');
+  $("#player_name").val('');
+});
+
+// Activate draft
 $("#booster_assign").on("click", function() {
   console.log("DRAFT LAUNCHING. CHAOS COMMENCING.");
   console.log("ARR: " + boosterArr);
-  playerAmt = parseInt($("#player_count").val());
-  console.log("playerAmt: " + playerAmt);
+  console.log("Player amount: " + playerArr.length);
 
   // For each player
-  for (let i = 1; i < playerAmt + 1; i++) {
+  for (let i = 0; i < playerArr.length; i++) {
     // Temporary array for each player's boosters
     let currPlayer = [];
     // Assign them three boosters
@@ -37,7 +47,9 @@ $("#booster_assign").on("click", function() {
       boosterArr.splice(randoPack, 1);
     }
     // And tell them which boosters they got
-    console.log("Player " + i + " recieves: "+currPlayer);
+    console.log("Player " + playerArr[i] + " recieves: "+currPlayer);
+    // But in a DOM element
+    $("#player_tray").append('<li>'+playerArr[i]+' recieves: '+currPlayer[0]+', '+currPlayer[1]+', '+currPlayer[2]+'.</li>');
   }
 
   // I want to assign three boosters per player.
