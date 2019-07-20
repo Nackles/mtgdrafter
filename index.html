@@ -16,18 +16,20 @@
 <body>
   <div class="container">
     <div class="row">
+    
       <div class="col s12">
         <img src="./mtgtg.jpg" class="img_center" />
-        <h1 class="center">CHAOS DRAFT</h1>
-        <p class="center">
-          Enter the name of each booster pack (duplicates ok!), then the amount of players, then hit ASSIGN BOOSTERS to
-          get
-          assigned your packs!
-        </p>
       </div>
+
     </div>
-    <div class="row">
-      <div class="col s6">
+    <div class="row" id="everything">
+      <h1 class="center">CHAOS DRAFT</h1>
+      <p class="center">
+        Enter the name of each booster pack (duplicates ok!), then the amount of players, then hit ASSIGN BOOSTERS to
+        get
+        assigned your packs!
+      </p>
+      <div class="col s6" id="left">
         <p>Players: <span id="player_count">0</span></p>
         <ul class="collection" id="player_entries"></ul>
         <p>Packs: <span id="pack_count">0</span></p>
@@ -35,8 +37,8 @@
         <p>Final Draftination:</p>
         <ul class="collection" id="player_tray"></ul>
       </div>
-      <div class="col s6" id="survey_tray">
 
+      <div class="col s6" id="survey_tray">
         <input type="text" id="booster_title" />
         <label for="booster_title">Enter booster name!</label>
         <br /><br />
