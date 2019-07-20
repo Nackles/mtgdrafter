@@ -39,21 +39,27 @@
       </div>
 
       <div class="col s6" id="survey_tray">
-        <input type="text" id="booster_title" />
-        <label for="booster_title">Enter booster name!</label>
-        <br /><br />
-        <input class="btn" type="submit" id="booster_enter" value="Enter Booster" />
 
-        <input type="text" id="player_name" />
-        <label for="player_name">Enter player name!</label>
-        <br /><br />
-        <input class="btn" type="submit" id="player_enter" value="Enter Player" />
-        <br><br>
-        <input class="btn" type="submit" id="booster_assign" value="ACTIVATE DRAFTER" />
-        <br><br><br>
-        <div class="divider"></div>
-        <br>
-        <div class="booster_list"></div>
+          <form id="player_input">
+              <input type="text" name="player_input" id="player_name" />
+              <label for="player_name">Enter player name!</label>
+              <br /><br />
+              <input class="btn" type="submit" id="player_enter" value="Enter Player" />
+          </form>
+
+          <form id="booster_form">
+              <input type="text" name="booster_input" id="booster_title" />
+              <label for="booster_title">Enter booster name!</label>
+              <br /><br />
+              <input class="btn" type="submit" id="booster_enter" value="Enter Booster" />
+          </form>
+
+          <br><br>
+          <input class="btn" type="submit" id="booster_assign" value="ACTIVATE DRAFTER" />
+          <br><br><br>
+          <div class="divider"></div>
+          <br>
+          <div class="booster_list"></div>
       </div>
 
     </div>
