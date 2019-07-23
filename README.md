@@ -10,6 +10,7 @@ MTG drafter takes booster pack and player name input, counts the amount of each,
 # TODO, in order:
 TODO: Add validation to the ACTIVATE DRAFTER button to ensure the amount of packs is divisible by number of players without remainder. This is to ensure all/enough players and/or boosters were entered.
 TODO: Add local storage and a reset button for persistence through sessions and accidental refresh.
+TODO: Add Google Text Recognition API for booster pack scanning!
 TODO: Add a round-robin tournament bracket system that will track wins/losses/colors.
 TODO: Add Mongo support for all data storage.
 TODO: MAKE IT PRETTY! ADD ANIMATION!
