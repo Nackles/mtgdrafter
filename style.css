@@ -1,18 +1,22 @@
 html {
- background: url('./mtgbg.jpg');
+ background-image: url('./mtgbg.jpg');
  background-repeat: no-repeat;
+ background-attachment: fixed;
  background-size: cover;
- background-position: center;
 }
 
-.img_center {
+
+/* Unused class */
+/* .img_center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
+  width: 100%;
+  height: 150px;
+} */
 
 h1 {
-    margin: 1em;
+    background-color: pink;
 }
 
 #survey_tray {
@@ -20,7 +24,7 @@ h1 {
 }
 
 .collection {
-  margin-top:1em;
+  margin-top:2px;
 }
 
 #left {
@@ -29,4 +33,9 @@ h1 {
 
 #everything {
   background-color: whitesmoke;
+  /* padding: 1px; */
+}
+
+li {
+  padding: 1px;
 }
