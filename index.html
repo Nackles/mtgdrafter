@@ -24,63 +24,68 @@
 
   <body>
     <div class="container">
+
       <div class="row" id="everything">
-        <h1 class="center">CHAOS DRAFT</h1>
-        <p class="center">
-          Enter the name of each booster pack (duplicates ok!), then the names of all players, then hit ASSIGN BOOSTERS to get drafted
+        <div class="col s6 z-depth-1" id="left">
+        <p id="instructions" class="center">
+          Enter the name of each booster pack (duplicates ok!), then the names of all players, then click ASSIGN BOOSTERS for draft results.
         </p>
-        <div class="col s6" id="left">
-          <p>Players: <span id="player_count">0</span></p>
-          <ul class="collection" id="player_entries"></ul>
-          <p>Packs: <span id="pack_count">0</span></p>
-          <ul class="collection" id="player_packs"></ul>
-        </div>
-
-        <div class="col s6" id="survey_tray">
+          <!-- Data taken in all at once for data specificity (this now tracks which player contributed which pack) and ease of storage -->
+          <div id="form_tray">
           <form id="player_input">
+            <!-- Player Name -->
             <input type="text" name="player_input" id="player_name" placeholder="Person McNamer" />
-            <label for="player_name">Enter player name!</label>
+            <label for="player_name">Player name</label>
+            <!-- Booster Pack 1 -->
+            <input type="text" name="booster_input" id="booster_title_1" placeholder="Booster 1" />
+            <label for="booster_title_1">Booster 1</label>
+            <!-- Booster Pack 2-->
+            <input type="text" name="booster_input" id="booster_title_2" placeholder="Booster 2" />
+            <label for="booster_title_2">Booster 2</label>
+            <!-- Booster Pack 3 -->
+            <input type="text" name="booster_input" id="booster_title_3" placeholder="Booster 3" />
+            <label for="booster_title_3">Booster 3</label>
             <br /><br />
             <input
               class="btn"
               type="submit"
-              id="player_enter"
-              value="Enter Player"
+              id="enter_boosters"
+              value="Enter Boosters"
             />
           </form>
-
-          <form id="booster_form">
-            <input type="text" name="booster_input" id="booster_title" placeholder="Booster McDraftMe" />
-            <label for="booster_title">Enter booster name!</label>
-            <br /><br />
-            <input
-              class="btn"
-              type="submit"
-              id="booster_enter"
-              value="Enter Booster"
-            />
-          </form>
-
-          <br /><br />
           <input
-            class="btn"
-            type="submit"
-            id="booster_assign"
-            value="ACTIVATE DRAFTER"
-          />
-          <br /><br /><br />
-          <br />
-          <div class="booster_list"></div>
+          class="btn"
+          type="submit"
+          id="booster_assign"
+          value="ACTIVATE DRAFTER"
+        />
         </div>
 
-        <div class="row">
-          <div class="col s12">
-            <p>Final Draftination:</p>
-            <ul class="collection" id="player_tray"></ul>
+          <div class="booster_list"></div>
+
+        <!-- Results Tray -->
+        <div class="col s12" id="left">
+            <p>Players: <span id="player_count">0</span></p>
+            <ul class="collection" id="player_entries"></ul>
+            <p>Packs: <span id="pack_count">0</span></p>
+            <ul class="collection" id="player_packs"></ul>
           </div>
+
         </div>
       </div>
+
     </div>
+
+    <!-- Draft Results Modal -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <p>Final Draftination:</p>
+            <ul class="collection" id="player_tray"></ul>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat"></a>
+        </div>
+      </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

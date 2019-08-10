@@ -22,7 +22,7 @@ $('#player_enter').on('click', function() {
 })
 
 // Add a booster
-$('#booster_enter').on('click', function() {
+$('#enter-boosters').on('click', function() {
   event.preventDefault()
   booster = $('#booster_title').val()
   noEmpty(booster)
