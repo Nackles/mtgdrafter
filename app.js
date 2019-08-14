@@ -1,39 +1,53 @@
 // Declare global variables
-let boosterArr = []
-let playerArr = []
-let booster = ''
-let player = ''
+// let boosterArr = []
+// let playerArr = []
+// let booster = ''
+// let player = ''
 let playerCount = 0
 let packCount = 0
 
-// Define throw exception
+
+// Declaring the draft array
+let draftPool = []
+
+// Defined exception for if a player tries to submit an empty string
 const IllegalArg = new Error("Prevented an empty string submission.")
 
-// Add a player
-$('#player_enter').on('click', function() {
+// Add player information 
+$('#player_submit').on('click', function() {
+  // Prevent refresh on click/enter
   event.preventDefault()
-  player = $('#player_name').val()
-  noEmpty(player)
-  playerArr.push(player)
+  // Create a player object
+  // TODO: Make packs belong to players: I need to be able to iterate around player names and pack names
+  let playerInfo = {
+      name: $("#player_name").val(), 
+      pack1: $("#booster_title_1").val(),
+      pack2: $("#booster_title_2").val(),
+      pack3: $("#booster_title_3").val()
+}
+  // Validate player object - no empty strings allowed in any value
+  noEmpty(playerInfo)
+  // Add player to draft pool
+  draftPool.push(playerInfo)
+  console.log(draftPool)
+  // Update player and pack count
+  packCount += 3
   playerCount += 1
-  $('#player_count').text(playerCount)
-  $('#player_entries').append('<ul>' + player + '</ul>')
-  $('#player_name').val('')
-})
-
-// Add a booster
-$('#enter-boosters').on('click', function() {
-  event.preventDefault()
-  booster = $('#booster_title').val()
-  noEmpty(booster)
-  boosterArr.push(booster)
-  packCount += 1
   $('#pack_count').text(packCount)
-  $('#player_packs').append('<ul>' + booster + '</ul>')
-  $('#booster_title').val('')
+  $('#player_count').text(playerCount)
+  // Add player name and packs to DOM
+  $('#player_packs').append('<ul>' + playerInfo.pack1 + '</ul>')
+  $('#player_packs').append('<ul>' + playerInfo.pack2 + '</ul>')
+  $('#player_packs').append('<ul>' + playerInfo.pack3 + '</ul>')
+  $('#player_entries').append('<ul>' + playerInfo.name + '</ul>')
+  // Reset form
+  $('#player_name').val('')
+  $('#booster_title_1').val('')
+  $('#booster_title_2').val('')
+  $('#booster_title_3').val('')
 })
 
-// Activate draft
+// Activate draft TODO: Next section to update
 $('#booster_assign').on('click', function() {
   event.preventDefault()
   if (packCount % playerCount != 0) {
@@ -83,7 +97,7 @@ function reset() {
 
 // Form validation - no empty messages
 function noEmpty(validate) {
-  if (validate === '') {
+  if ((!validate.name) || (!validate.pack1) || (!validate.pack2) || (!validate.pack3)) {
     // IllegalArg is defined below global variables
     throw IllegalArg
   }
